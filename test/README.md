@@ -1,1 +1,1 @@
-此文件夹用于js test使用
+js test
