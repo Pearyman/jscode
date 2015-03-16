@@ -2,17 +2,45 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>test</title>
+	<title>h5_text_tap</title>
+
+<style type="text/css">
+	body{background: #000;}
+	p{color: #fff; text-align: right; font-size: 30px; font-weight: bold;}
+</style>
 </head>
 <body>
+<p>共点击 <span class="num">0</span>次</p>
+<p>剩余时间 <span class="time">10</span>S</p>
+<script type="text/javascript" src="moudle/zepto.min.js"></script>	
 <script type="text/javascript">
- ;(function(){
- 	var a=1;
- 	while(a>0){
- 		a++;
- 	console.log(a);
- 	}
- })()
-</script>	
+	;(function(window,$){
+
+		var num=0,time=10;
+		setInterval(function(){
+			time--;
+			$(".time").text(time);
+			var tapNum=$(".num").text();
+			if(time==-1){
+				alert("the end,你共点击了"+tapNum+"下");
+			}
+		},1000);
+
+	 	$(document).on("tap",function(){
+	 		num++;
+			$("body").css("background",	"#"+randomColor());
+			$(".num").text(num);
+		})
+
+		function randomColor(){  
+		    var rand = Math.floor(Math.random( ) * 0xFFFFFF).toString(16);  
+			    if(rand.length == 6){  
+			        return rand;  
+			    }else{  
+			        return randomColor();  
+			    }  
+			}    
+	})(window,Zepto)
+</script>
 </body>
 </html>
