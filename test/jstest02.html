@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div></div>
+<script type="text/javascript">
+	;(function(){
+		var odiv=document.querySelector("div");
+		var appid=odiv.dataset.appid;
+		var myname=odiv.dataset.myname;
+		odiv.dataset.appid=123;
+		odiv.dataset.myname="lee";
+		if(odiv.dataset.appid){
+			console.log("success");
+		}
+	})()
+</script>
+</body>
+</html>
