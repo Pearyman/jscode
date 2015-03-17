@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>dom0</title>
+	<style type="text/css">
+#btn{width: 100px; height: 100px; background: #f90;}
+	</style>
+
+</head>
+<body>
+<div id="btn"></div>
+<script type="text/javascript">
+	;(function(){
+		var btn=document.getElementById("btn");
+		// btn.onclick=null;
+		btn.onclick=function(){
+			alert(this.id);
+		}
+		// btn.onclick=null;
+	})()
+</script>	
+</body>
+</html>
