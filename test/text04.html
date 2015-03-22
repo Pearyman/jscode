@@ -19,13 +19,22 @@
 			</p>
 		</div>
 	</div> -->
-	<div>
+	<!-- <div>
 		<p>p</p>
 		<h2>h2</h2>
 		<h3>h3</h3>
 		<h4>h4</h4>
 		<h5>h5</h5>
 		<h6>h6</h6>
+	</div> -->
+	<div>
+		<p>P1</p>
+	</div>
+	<div>
+		<p class="a1">P2</p>
+	</div>
+	<div>
+		<p class="a1">P3</p>
 	</div>
 <script type="text/javascript" src="../moudle/jquery.min.js"></script>	
 <script type="text/javascript">
@@ -43,7 +52,12 @@
 	//sibings(),next(),nextAll(),nextUntil(),prev(),preAll(),preUntil()
 	// $("h4").siblings().css("border","3px solid red");
 	// $("h4").nextUntil("h6").css("border","3px solid red");
-	$("h4").nextAll().css("border","3px solid red");
+	// $("h4").nextAll().css("border","3px solid red");
+	//过滤
+	//first(),last(),eq(),filter(),not()
+	//filter() 标准
+	$("div p").filter(".a1").css("background","red");
+	$("div p").not(".a1").css("background","red");
 	})(window,jQuery)
 </script>
 </body>
