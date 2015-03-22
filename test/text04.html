@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>遍历</title>
+<style type="text/css">
+	/*#div1{width: 500px; height: 200px; border:3px solid chocolate;}
+	#div2{width: 400px; height: 150px; margin-top: 10px; margin-left: 10px; border:3px solid chocolate;}
+	p{margin:10px 0 0 10px; width: 150px; height: 80px; border: 3px solid chocolate;}*/
+	div>p,div>h2,div>h3,div>h4,div>h5,div>h6{border:3px solid grey;}
+
+</style>
+</head>
+<body>
+	<!-- <div id="div1">div1
+		<div id="div2">div2
+			<p>
+				<a href="javascript:;">hello</a>
+			</p>
+		</div>
+	</div> -->
+	<div>
+		<p>p</p>
+		<h2>h2</h2>
+		<h3>h3</h3>
+		<h4>h4</h4>
+		<h5>h5</h5>
+		<h6>h6</h6>
+	</div>
+<script type="text/javascript" src="../moudle/jquery.min.js"></script>	
+<script type="text/javascript">
+	;(function(window,$){
+	//向下遍历中的两个方法
+	//children 
+	//find
+	// $("#div1").children().css("border","3px solid #000"); //遍历的是子元素
+	// $("#div1").find("div").css("border","3px solid #000");   //find中必须要添加一个元素
+
+	//向上遍历的方法
+	//parent(),parents(),parentUntil()
+	// $("a").parentsUntil("#div1").css("border","3px solid #000");
+	//同级遍历
+	//sibings(),next(),nextAll(),nextUntil(),prev(),preAll(),preUntil()
+	// $("h4").siblings().css("border","3px solid red");
+	// $("h4").nextUntil("h6").css("border","3px solid red");
+	$("h4").nextAll().css("border","3px solid red");
+	})(window,jQuery)
+</script>
+</body>
+</html>
