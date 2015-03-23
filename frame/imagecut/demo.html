@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="http://fed.pimg.cn/css/gallery/backstage/base.css" rel="stylesheet" type="text/css">
+    <link href="http://fed.pimg.cn/css/moudle/backstage/ui/imagecut/imagecut.css" rel="stylesheet" type="text/css">
+    <script src="http://fed.pimg.cn/js/gallery/require-jquery.js"></script>
+    <script src="http://fed.pimg.cn/js/gallery/require-config.js"></script>
+</head>
+<body>
+    <img src="http://mxycsku.qiniucdn.com/group1/M00/E4/B6/wKgBV1Qma6iAQFVdAAPDBT9M0J8721.jpg" />
+<script>
+    require(['imagecut'],function(imagecut){
+        var crop = imagecut($('img'),{
+	        onChange : function(){
+		        console.log(this.tellSelect());
+	        }
+        })
+
+    })
+</script>
+</body>
+</html>

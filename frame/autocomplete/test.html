@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        .ymui_sp_selected{background-color: #00C2D1;}
+    </style>
+</head>
+<body>
+<input id="test" type="text"/>
+<script src="http://fed.pimg.cn/js/gallery/require-jquery.js"></script>
+<script src="http://fed.pimg.cn/js/gallery/require-config.js"></script>
+<script type="text/javascript">
+
+
+   require(['autocomplete'], function (autocomplete) {
+
+        var data = ['11111','22222','33333', '66666'];
+
+        autocomplete({
+            input : '#test',
+            wrapper : '',
+            position :'',
+            width :0,
+            delay : 100,
+            fnRequest : function (value, node){
+                if(!value){
+                    this.hide();
+                    return;
+                }
+                this.setContent(data);
+                this.show();
+                //this.setEmpty('no reulst');
+            },
+            fnSelect : function (index, node, len, nodes) {
+                this.hide();
+                $('#test').val(node.text());
+            },
+            fnFocus : function () {
+                this.show();
+            }
+        })
+    });
+</script>
+</body>
+</html>

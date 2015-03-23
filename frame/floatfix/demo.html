@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="http://fed.pimg.cn/css/gallery/backstage/base.css" rel="stylesheet" type="text/css">
+    <script src="http://fed.pimg.cn/js/gallery/require-jquery.js"></script>
+    <script src="http://fed.pimg.cn/js/gallery/require-config.js"></script>
+	<style>
+		body{height:2000px;padding-top:500px;padding-left:200px;color:#fff;}
+		.floatfix-test{width:1000px;height:1000px;border:1px solid #ccc;float:left;}
+		.float-inner{width:100px;height:100px;background: red;}
+		.float-another{width:100px;height:100px;background: green;float: left;}
+	</style>
+</head>
+<body>
+    <div class="floatfix-test">
+	    <div class="float-inner">container: div</div>
+    </div>
+    <div class="float-another">container: body</div>
+<script>
+    require(['floatfix'],function(floatfix){
+        floatfix({
+	        target : $('.float-inner'),
+	        container : $(".floatfix-test"),
+            margin : [10,10],
+            onScroll : function(){
+                this.configs.target.addClass('test')
+            },
+            onStop : function(){
+                this.configs.target.removeClass('test')
+            }
+        })
+	    floatfix({
+            target : $('.float-another')
+	    })
+    })
+</script>
+</body>
+</html>

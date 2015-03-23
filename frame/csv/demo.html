@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>csv测试</title>
+	<link href="http://fed.pimg.cn/css/gallery/backstage/admin/base.css" rel="stylesheet"/>
+	<script src="http://fed.pimg.cn/js/gallery/require-jquery.js"></script>
+	<script src="http://fed.pimg.cn/js/gallery/require-config.js"></script>
+</head>
+<body>
+  <a href="" class="btn btn-default btn-lg csv-download">导出表格</a>
+<table class="table table-bordered csv-table">
+	<thead>
+		<th>测试1</th>
+		<th>测试2</th>
+		<th>测试3</th>
+		<th>测试4</th>
+		<th>测试5</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1111</td>
+			<td>1111</td>
+			<td>1111</td>
+			<td>1111</td>
+			<td>1111</td>
+		</tr>
+		<tr>
+			<td>2222</td>
+			<td>2222</td>
+			<td>2222</td>
+			<td>2222</td>
+			<td>2222</td>
+		</tr>
+		<tr>
+			<td>3333</td>
+			<td>3333</td>
+			<td>3333</td>
+			<td>3333</td>
+			<td>3333</td>
+		</tr>
+	</tbody>
+</table>
+<script>
+	require(['csv'],function(CSV){
+		CSV({
+			downloadNode : $('.csv-download'),
+			dataNode : $('.csv-table')
+		})
+	})
+</script>
+</body>
+</html>

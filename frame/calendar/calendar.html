@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>日历说明文档</title>
+<style>
+
+</style>
+</head>
+<body>
+<h2>参数说明</h2>
+    <p>target : null,//触发点击事件显示日历的dom对象</p>
+    <p>container : '#j_ym_calendar',//初始日历的容器</p>
+    <p>calendarNum : 1,//显示几个日历</p>
+    <p>dayRange : null,//显示范围日期 </p>
+    <p>beforeToday:[0,null/*{selectedYear:,selectedMonth :,selectedDay:,isThisDay:}*/],//显示(今天或者指定日期)及以前的日历//isThisDay=0时是不包括指定日期//</p>
+    <p>afterToday:[0,null/*{selectedYear:,selectedMonth :,selectedDay:,isThisDay:}*/],//显示(今天或者指定日期)及以后的日历//isThisDay=0时是不包括指定日期//</p>
+    <p>selectedYear : null,//日历开始的年份(不设置为当天所在年份)</p>
+    <p>selectedMonth : null,//日历开始的月(不设置为当天所在月)</p>
+    <p>selectedDay : null,//日历开始的被选中天(不设置为当天日期)</p>
+    <p>zIndex : Ymbase.ZINDEX,//设置日历的z-index</p>
+    <p>hideCalendar : true,//点击日历外是否可以隐藏日历</p>
+    <p>booleanSelectedYears : true,//是否可以选择年份列表被选日期,是否变成选中状态</p>
+    <p>isShowSelectedDate : true,//是否把选中日期置为选中状态</p>
+    <p>haveStartDate : false,//固定日历的开始日期(默认跟随当前日期)</p>
+    <p>dateFormat : 'yyyy-mm-dd',//输入输出的日期格式</p>
+    <p>isSelected : null,//是否以选中日期为开始的年月日</p>
+    <p>getInitSelectedDate : null,//获得初始日期信息(默认情况是通过对target的val或者html来获得。return的是{selectedYear:,selectedMonth:,selectedDay:})</p>
+    <p>verfyFiledFn : null,//点击或者focus对象target获得的初始信息失败的对应操作</p>
+    <p>verfySuccessFn : null,//点击target(如果是显示日期的显示区为html)执行</p>
+    <p>selectedDayFunc : null,//选择日期后</p>
+    <p>initNotInputHtm : null//当target是非input的dom时采用的</p>
+<h2>方法说明</h2>
+    <p>getInitSelectedDate(target)//初始获得对象日历信息fn(用于不规则显示dom),target是存储日历信息的dom</p>
+<!--footerbg E-->
+<script type="text/javascript" src="http://static.e7e6.net/js/web/dictator/seed/seed.js"></script>
+<script type="text/javascript" src="http://static.e7e6.net/js/web/rootconfig.js"></script>
+<script>
+
+</script>
+</body>
+</html>

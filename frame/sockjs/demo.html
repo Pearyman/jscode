@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<link href="http://fed.pimg.cn/css/gallery/backstage/reset.css" rel="stylesheet" type="text/css">
+	<script src="http://fed.pimg.cn/js/gallery/require-jquery.js"></script>
+	<script src="http://fed.pimg.cn/js/gallery/require-config.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+	require(['sockjs'],function(sockjs){
+		var sock = new sockjs('http://fed.pimg.cn/css/app/backstage/admin/edit/');
+		sock.onopen = function() {
+			console.log('open');
+		};
+		sock.onmessage = function(e) {
+			console.log('message', e.data);
+		};
+		sock.onclose = function() {
+			console.log('close');
+		};
+
+		/*sock.send('test');
+		sock.close();*/
+	})
+</script>
+</body>
+</html>

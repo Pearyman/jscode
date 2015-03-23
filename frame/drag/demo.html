@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<link href="http://fed.pimg.cn/css/gallery/backstage/reset.css" rel="stylesheet" type="text/css">
+	<script src="http://fed.pimg.cn/js/gallery/require-jquery.js"></script>
+	<script src="http://fed.pimg.cn/js/gallery/require-config.js"></script>
+	<style>
+		.drag-test{width:100px;height:100px;border:1px solid #ccc;background: #fff;}
+	</style>
+</head>
+<body>
+<div class="drag-test test1">
+	<p>hello,xy</p>
+</div>
+<div class="drag-test test2">
+	<p>hello,y</p>
+</div>
+<div class="drag-test test3">
+	<p>hello,x</p>
+</div>
+<script type="text/javascript">
+	require(['drag'],function(drag){
+		var DRAG = drag;
+		DRAG({
+			dragNode : $('.test1')
+		})
+		DRAG({
+			dragNode : $('.test2'),
+			dragPosition : 'y',
+			scroll : true
+		})
+		DRAG({
+			dragNode : $('.test3'),
+			dragPosition : 'x'
+		})
+	})
+</script>
+</body>
+</html>

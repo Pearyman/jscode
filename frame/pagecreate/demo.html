@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>pagecreate</title>
+    <link rel="stylesheet" href="http://fed.pimg.cn/css/gallery/backstage/wap_statistics/base.css">
+	<link href="http://fed.pimg.cn/css/moudle/backstage/ui/pagecreate/pagecreate.css" rel="stylesheet" />
+	<script src="http://fed.pimg.cn/js/gallery/require-jquery.js"></script>
+	<script src="http://fed.pimg.cn/js/gallery/require-config.js"></script>
+	<style>
+	.act{color: red;}
+
+	</style>
+</head>
+<body>
+ 	<div class="page"></div>
+<script>
+	require(['base','pagecreate'],function(base,pagecreate){
+		var pagecreate1 = pagecreate({
+			container : $(".page"),
+			pageRange : 3,/*显示多少个页码*/
+			pageAmount : 10,/*当前总页码数*/
+			isShowGopage : function(){
+				var _htm = '<a class="HC-go-btn" href="javascript:;">GO</a>';
+				_htm += '<input type="text" class="HC-go-page"/>';
+				this.opts.container.append(_htm);
+			},
+			isShowPrev : function(){
+				var _htm = '<a class="HC-prev-page" href="javascript:;">&lt;&lt;</a>';
+				this.opts.container.prepend(_htm);
+			},
+			isShowNext : function(){
+				var _htm = '<a class="HC-next-page" href="javascript:;">&gt;&gt;</a>';
+				this.opts.container.append(_htm);
+			},
+			changePage : function(){
+				console.log(this.opts);
+			}
+		})
+	});
+</script>
+</body>
+</html>

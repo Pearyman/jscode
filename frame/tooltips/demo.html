@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<link href="http://fed.pimg.cn/css/gallery/backstage/reset.css" rel="stylesheet" type="text/css">
+	<script src="http://fed.beta.pimg.cn/js/gallery/require-jquery.js"></script>
+	<script src="http://fed.beta.pimg.cn/js/gallery/require-config.js"></script>
+    <link href="../../../../css/moudle/backstage/ui/tooltips/tooltips.css" rel="stylesheet" type="text/css">
+    <style>
+        button{margin-left:300px;}
+    </style>
+</head>
+<body>
+	<div style="width:200px;height:300px;"></div>
+    <button class="test1" data-title="11111111111111111111111">bottom</button>
+    <button class="test2" data-title="22222222222222222222">top</button>
+    <button class="test3" data-title="33333333333333333333">left</button>
+    <button class="test4" data-title="4444444444444444444">right</button>
+	<script type="text/javascript">
+		require(['tooltips'],function(tooltips){
+            tooltips({
+                target : '.test1',
+                position : 'bottom',
+                onShow : function(){
+
+                },
+                onHide : function(){
+
+                }
+            })
+            tooltips({
+                target : '.test2',
+                position : 'top'
+            })
+            tooltips({
+                target : '.test3',
+                autoHide : 1,
+                position : 'left'
+            })
+            tooltips({
+                target : '.test4',
+                autoHide : 1,
+                position : 'right',
+                onShow : function(){
+                    console.log(this.toolTipContainer);//tips container 节点
+                    console.log(this.currentNode); //当前节点
+                },
+                onHide : function(){
+
+                }
+            })
+		})
+	</script>
+</body>
+</html>

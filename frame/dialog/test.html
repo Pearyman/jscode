@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>dialog test</title>
+    <link rel="stylesheet" href="http://fed.pimg.cn/css/gallery/web/reset.css"/>
+    <link rel="stylesheet" href="http://fed.pimg.cn/css/moudle/backstage/ui/dialog/dialog.css"/>
+    <script src="http://fed.pimg.cn/js/gallery/require-jquery.js"></script>
+    <script src="http://fed.pimg.cn/js/gallery/require-config.js"></script>
+</head>
+<body>
+<button class="dialog-confirm-test">confirm</button>
+<button class="dialog-alert-test">alert</button>
+<button class="dialog-tip-test">tip</button>
+<script type="text/javascript">
+    require(['dialog'],function(dialog){
+        //confirm
+        $('.dialog-confirm-test').click(function(){
+            dialog.confirm({
+                overlay : 1,
+                onload : function(dialog,node){
+                    $('.HC-dialog-confirm').on('click',function(){
+                        dialog.close();
+                    })
+                },
+	            draggable : 1
+            });
+        })
+        $('.dialog-alert-test').click(function(){
+            dialog.alert({
+                onload : function(dialog,node){
+                    $('.HC-dialog-confirm').on('click',function(){
+                        dialog.close();
+                    })
+                },
+                overlay : 1
+            });
+        })
+        $('.dialog-tip-test').click(function(){
+            var tipCallback = function(){
+                alert('dialog auto close and callback');
+            }
+            dialog.tip({
+                overlay : 1,
+                autoClose : [2,tipCallback]
+            });
+        })
+    })
+</script>
+</body>
+</html>

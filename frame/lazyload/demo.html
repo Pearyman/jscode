@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>延迟加载测试页面</title>
+    <script src="http://fed.pimg.cn/js/gallery/require-jquery.js"></script>
+    <script src="http://fed.pimg.cn/js/gallery/require-config.js"></script>
+    <style>
+        img{height:350px;display: block;}
+    </style>
+</head>
+<body>
+<div class="buttons-test">
+    <div style="height:500px;"></div>
+    <img data-src="http://mxycsku.qiniucdn.com/group5/M00/0D/CB/wKgBf1So-RGAKDHSAALAa1kZJR0441.jpg?imageMogr/v2/auto-orient/thumbnail/314/quality/100" />
+    <img data-src="http://mxycsku.qiniucdn.com/group5/M00/39/4B/wKgBfVS2MHyAH3evAALeDgD7iDE091.jpg?imageMogr/v2/auto-orient/thumbnail/314/quality/100" />
+    <img data-src="http://mxycsku.qiniucdn.com/group5/M00/3B/A5/wKgBf1S2WYuAAD9aAANlas9zTRA688.jpg?imageMogr/v2/auto-orient/thumbnail/314/quality/100" />
+    <img data-src="http://mxycsku.qiniucdn.com/group5/M00/45/AB/wKgBf1S47uqANyY9AALcQ6aZDr0838.jpg?imageMogr/v2/auto-orient/thumbnail/314/quality/100" />
+    <img data-src="http://mxycsku.qiniucdn.com/group5/M00/0D/CC/wKgBf1So-RWABDPQAAOxuMY4LT8672.jpg?imageMogr/v2/auto-orient/thumbnail/314/quality/100" />
+    <img data-src="http://mxycsku.qiniucdn.com/group5/M00/26/00/wKgBfVSvqLaAbTtCAAg2AYfufBM220.jpg?imageMogr/v2/auto-orient/thumbnail/314/quality/100" />
+</div>
+    <script>
+        require(['lazyload'],function(lazyload){
+          lazyload({
+              target : 'img',
+              showMode : 'fade'
+          })
+        })
+    </script>
+</body>
+</html>
