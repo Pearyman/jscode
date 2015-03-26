@@ -8,12 +8,32 @@
 <script src="../moudle/zepto.min.js"></script>
 <script type="text/javascript">
 	;(function(window,$){
-		$.extend($,{
-			add:function(a,b){return a+b;},
-			min:function(a,b){return a-b;}
-		})
-		console.log($.add(3,4));
-		console.log($.min(3,4));
+		// $.extend($,{
+		// 	add:function(a,b){return a+b;},
+		// 	min:function(a,b){return a-b;}
+		// })
+		// console.log($.add(3,4));
+		// console.log($.min(3,4));
+		var LBD=function(){
+			// this.init.apply(this, arguments);
+		}
+		LBD.prototype={
+			init:function(configs){
+				var self=this;
+				self.configs={
+					constainor:'',
+					target:''
+				}
+			},
+			add:function(a,b){
+				return a+b;
+			},
+			min:function(a,b){
+				return a-b;
+			}
+		}
+
+		console.log(LBD.add(4,1));
 	})(window,Zepto)
 
 </script>
