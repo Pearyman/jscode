@@ -10,15 +10,18 @@
 	//Object.freeze()此方法用来冻结对象，该方法既不可以拓展，又是密封的
 	// "use strict"   在严格模式下 尝试添加或删除对象都会导致抛出错误
 	;(function(){
-		var person={
-			name:'lee'
-		};
-		// Object.seal(person);
-		Object.freeze(person);
-		person.age=29;
-		console.log(person.age);
-		delete person.name;
-		console.log(person.name);
+		// var person={
+		// 	name:'lee'
+		// };
+		// // Object.seal(person);
+		// Object.freeze(person);
+		// person.age=29;
+		// console.log(person.age);
+		// delete person.name;
+		// console.log(person.name);
+		var a={},x,a;
+		a.x = a = {n:2};
+		console.log(a.x);
 		
 	})()
 </script>
