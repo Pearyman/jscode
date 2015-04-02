@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Webstorage</title>
+</head>
+<body>
+	
+	<textarea id="input"> </textarea>
+	<input type="button" value="保存数据" id="save" />
+	<input type="button" value="读取数据" id="load" />
+	<p id="msg"></p>
+<script type="text/javascript">
+	;(function(){
+		var ST={
+			init:function(){
+				var self=this;
+				self.bindEvent();
+			},
+			bindEvent:function(){
+				document.querySelector("#save").addEventListener("click",ST.saveData,false);
+				document.querySelector("#load").addEventListener("click",ST.loadStorage,false);
+			},
+			saveData:function(){
+				var target=document.querySelector("#input");
+		        var str=target.value;
+		        localStorage.setItem("message",str);
+		        alert("save success");
+			},
+			loadStorage:function(){
+				var target=document.querySelector("#msg");
+				var msg=localStorage.getItem("message");
+				target.innerHTML=msg;
+			},
+			
+		}
+         ST.init();
+       })()
+</script>
+</body>
+</html>

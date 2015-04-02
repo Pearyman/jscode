@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size:50px">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<!-- <meta http-equiv="refresh" content="5"> -->
+	<title>meta test</title>
+<style type="text/css">
+	p{color: #000; position: absolute; top: 10px; font-size: 0.505rem; right: 10px;}
+</style>
+
+
+</head>
+<body style="margin:0 auto; width:100%; max-width:640px; min-width:320px; position:relative;">
+	<img src="../images/bg.jpg" width="100%" alt="" title="" />
+	<p>点击分享</p>
+<script type="text/javascript" src="../moudle/zepto.min.js"></script>
+<!-- <script type="text/javascript" src="../base/h5_base.js"></script> -->
+<script type="text/javascript">
+  $(function(){
+  	var num=0;
+  	$("body").on("tap",function(){
+  		num++;
+  		if(num==10){
+  			window.location.href="http://baidu.com"
+  		}
+  	})
+  })
+</script>
+</body>
+</html>
