@@ -1,0 +1,1 @@
+a,button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0;);-webkit-user-modify:read-write-plaintext-only;} /*去除元素触摸的时候产生的半透明灰色遮罩,去除安卓手机点击时候产生的边框*/
