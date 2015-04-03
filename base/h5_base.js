@@ -58,7 +58,6 @@ $(function() {
    *     b:2,
    *     c:aa	
    * }
-   *
    */
 
 	BASE.method = {
