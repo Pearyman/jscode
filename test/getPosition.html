@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>getPosition</title>
+</head>
+<body>
+<div id="map" style="width:400px; height:400px;"></div>
+<script type="text/javascript">
+	;(function(){
+		var GP={
+			init:function(){
+				var self=this;
+				GP.getLocation();
+			},
+			showObject:function(obj,k){
+				if(!obj){return;}
+				for(var i in obj){
+					if(typeof(obj[i]!="object")||obj[i]==null){
+						for(var j=0;j<k;j++){
+							document.write("&emsp;&emsp");
+						}
+						document.write(i+":"+obj[i]+"<br/>");
+					}else{
+						document.write(i+":"+"<br/>");
+						showObject(obj[i],k+1);
+					}
+				}
+			},
+			getLocation:function(){
+				if(navigator.geolocation){
+					navigator.geolocation.getCurrentPosition(GP.show_map,GP.handle_error,
+						{enableHighAccuracy:true,maximumAge:1000});
+
+				}else{
+					alert("不支持h5获取位置.");
+				}
+			},
+			handle_error:function(err){
+				switch(err.code){
+					case 1: 
+						alert("位置服务被拒绝");
+						break;
+					case 2:
+						alert("暂时拿不到位置信息");
+						break;
+					case 3:
+						alert("获取信息超时");
+						break;
+					default:
+						alert("未知错误");
+						break;
+				}
+			},
+			show_map:function(position){
+				var latitude=position.coords.latitude;
+				var longitude=position.coords.longitude;
+				showObject(position,0);
+			}
+		}
+		GP.init();
+	})();
+</script>	
+</body>
+</html>
