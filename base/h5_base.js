@@ -61,6 +61,11 @@ $(function() {
    */
 
 	BASE.method = {
+		/**
+		 * @example
+		 *
+		 *
+		 */
 		doAction: function(item, key, e) {
 			if (window.ANDROID_WODFAN_INSTANCE) {
 				e.preventDefault();
@@ -81,6 +86,32 @@ $(function() {
 				window.WebViewJavascriptBridge.callHandler('doAction', item);
 
 			})
+		},
+		/**
+		 * @example:
+		 *     ① templates:'<tr><td>{id}</td><td>{user}</td></tr>' 
+		 *	   ② var list = respone.message.staruser_list,
+		 *				listhtml = '',
+		 *				item = {};
+		 *			$.each(list, function(i, n) {
+		 *				item = {
+		 *					id: n.id,
+		 *					user: n.user
+		 *				}
+		 *			listhtml += Base.lang.sub(templates, item);
+		 *
+		 * @note: ①(it is a html moudle)
+		 *        ② in ajax when you get the request successful 
+		 *          initialize list (get it in response)
+		 *          initialize listhtml,item
+		 *
+		 */
+		sub: function (s, o) {
+			var SUBREGEX = /\{\s*([^|}]+?)\s*(?:\|([^}]*))?\s*\}/g;
+			return s.replace ? s.replace(SUBREGEX, function (m, k) {
+				return o[k] === 'undefined' ? m : o[k];
+			}) : s;
+
 		}
 	}
 
