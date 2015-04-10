@@ -14,8 +14,8 @@
 		    left: 0;
 		    width: 100%;
 		    height: 100%;
-		    stroke-dasharray:273% 156%;
-		    stroke-dashoffset: 19%;
+		    stroke-dasharray:50% 156%;
+		    stroke-dashoffset: -206%;
 		    stroke: #ED6E5C;
 			stroke-linecap:round;
 		    fill: none;
@@ -24,17 +24,17 @@
 		    -ms-transform: rotate(90deg);
 		    -o-transform: rotate(90deg);
 		    transform: rotate(90deg);
-		    animation:first1 2s linear infinite;
-			-moz-animation:first1 2s linear infinite;
-			-webkit-animation:first1 2s 0 linear infinite;
-			-o-animation:first1 2s 0 linear infinite;		
+		    animation:first1 2s linear ;
+			-moz-animation:first1 2s linear ;
+			-webkit-animation:first1 2s 0 linear ;
+			-o-animation:first1 2s 0 linear ;		
 		}
 
 		@-webkit-keyframes first1
 		{
 		0%   {stroke-dasharray: 0%, 0%; stroke-dashoffset: 70%;}
-		50%  {stroke-dasharray: 20%, 150%; stroke-dashoffset: 0%;}
-		100% {stroke-dasharray: 273%, 156%; stroke-dashoffset: 19%;}
+	/*	50%  {stroke-dasharray: 50%, 150%; stroke-dashoffset: 0%;}*/
+		100% {stroke-dasharray: 164%, 156%; stroke-dashoffset: -206%;}
 		}
 
 		/*@-keyframes first1
@@ -50,10 +50,11 @@
 	<div class="test">
 			<div class="head">
 				<img src="../images/head.jpg"  width="100%" />
+				<svg id="svgForStroke" xmlns="http://www.w3.org/2000/svg">
+					<circle cx="50%" cy="50%" r="40%" stroke-width="1"/>
+				</svg>
 			</div>
-			<svg id="svgForStroke" xmlns="http://www.w3.org/2000/svg">
-				<circle cx="50%" cy="50%" r="40%" stroke-width="10%"/>
-			</svg>
+			
 	</div>
 </body>
 </html>
