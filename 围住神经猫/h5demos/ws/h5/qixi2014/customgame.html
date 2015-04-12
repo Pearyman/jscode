@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title></title>
+
+    <script>
+
+        function genGame() {
+            var txt = document.getElementById("content_ta").value;
+            location.href = "index.html?words="+encodeURI(txt);
+        }
+
+    </script>
+</head>
+<body>
+<div>
+<div>在下面文本框中输入你的祝福语，之后点击“生成”按钮</div>
+<textarea id="content_ta" style="width: 200px;height: 200px"></textarea>
+</div>
+<button onclick="genGame();">生成</button>
+</body>
+</html>

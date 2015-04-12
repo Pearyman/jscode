@@ -1,0 +1,36 @@
+<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" currentTimeline="1" xflVersion="2.4" creatorInfo="Adobe Flash Professional CC" platform="Macintosh" versionInfo="Saved by Adobe Flash Macintosh 14.0 build 110" majorVersion="14" buildNumber="110" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false" filetypeGUID="3CE50BB6-55CF-47A6-B591-01286DDDC64C">
+     <media>
+          <DOMBitmapItem name="Bitmap 2" itemID="53db4a94-0000001c" sourceLastImported="1406880382" sourcePlatform="macintosh" externalFileSize="8416" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="Bitmap 2" bitmapDataHRef="M 2 1406880382.dat" frameRight="960" frameBottom="960"/>
+          <DOMBitmapItem name="Bitmap 3" itemID="53db4a94-0000001d" sourceLastImported="1406880382" sourcePlatform="macintosh" externalFileSize="8416" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="Bitmap 3" bitmapDataHRef="M 3 1406880382.dat" frameRight="960" frameBottom="960"/>
+          <DOMBitmapItem name="Bitmap 4" itemID="53db4a94-0000001e" sourceLastImported="1406880382" sourcePlatform="macintosh" externalFileSize="8416" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="Bitmap 4" bitmapDataHRef="M 4 1406880382.dat" frameRight="960" frameBottom="960"/>
+          <DOMBitmapItem name="Bitmap 5" itemID="53db4a94-0000001f" sourceLastImported="1406880382" sourcePlatform="macintosh" externalFileSize="8416" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="Bitmap 5" bitmapDataHRef="M 5 1406880382.dat" frameRight="960" frameBottom="960"/>
+          <DOMBitmapItem name="Bitmap 6" itemID="53db4a94-00000020" sourceLastImported="1406880382" sourcePlatform="macintosh" externalFileSize="8416" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="Bitmap 6" bitmapDataHRef="M 6 1406880382.dat" frameRight="960" frameBottom="960"/>
+          <DOMBitmapItem name="Bitmap 7" itemID="53db4a94-00000021" sourceLastImported="1406880382" sourcePlatform="macintosh" externalFileSize="8416" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="Bitmap 7" bitmapDataHRef="M 7 1406880382.dat" frameRight="960" frameBottom="960"/>
+          <DOMBitmapItem name="qlqq.png" itemID="53db4a94-00000022" sourceLastImported="1400730559" sourcePlatform="macintosh" externalFileSize="8416" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="qlqq.png" bitmapDataHRef="M 1 1406880382.dat" frameRight="960" frameBottom="960"/>
+          <DOMBitmapItem name="rose.png" itemID="53db51b6-00000062" linkageExportForAS="true" linkageClassName="Rose" sourceLastImported="1406890670" sourcePlatform="macintosh" externalFileSize="3164" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="rose.png" bitmapDataHRef="M 8 1406882220.dat" frameRight="960" frameBottom="960"/>
+     </media>
+     <symbols>
+          <Include href="btn1.xml" itemID="53db92fb-00000054" lastModified="1406953823"/>
+          <Include href="btn2.xml" itemID="53dbb22e-00000087" lastModified="1406953225"/>
+          <Include href="btn3.xml" itemID="53dbc473-000000f9" lastModified="1406953872"/>
+          <Include href="qlqq_mc.xml" itemID="53db8df5-0000000e" lastModified="1406897891"/>
+     </symbols>
+     <timelines>
+          <DOMTimeline name="Scene 1">
+               <layers>
+                    <DOMLayer name="Layer 1" color="#4F80FF" current="true" isSelected="true">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements/>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+               </layers>
+          </DOMTimeline>
+     </timelines>
+     <persistentData>
+          <PD n="CreateJSToolkit_timelinedata" v="version&#xA;0.1&#xA;loop&#xA;true"/>
+     </persistentData>
+     <PrinterSettings platform="macintosh"/>
+     <publishHistory/>
+</DOMDocument>
