@@ -8,9 +8,9 @@ $(function() {
 	BASE.ui = {
 		init: function() {
 			var self = this;
-			self.autorun();
+			self.changeFont();
 		},
-		autorun: function() {
+		changeFont: function() {
 			var default_width = 20,
 				default_dpr = 1,
 				dpr = window.devicePixelRatio,
@@ -50,22 +50,18 @@ $(function() {
 		}
 	}
 
-  /*
-   *用于和安卓 IOS传递数据 
-   *数据利用item对象来进行传递
-   *eg:item={
-   *     a:1,
-   *     b:2,
-   *     c:aa	
-   * }
-   */
+  
 
 	BASE.method = {
-		/**
-		 * @example
-		 *
-		 *
-		 */
+		/*
+	     *@param 用于和安卓 IOS传递数据 
+	     *@param 数据利用item对象来进行传递
+	     *example:item={
+	     *     			a:1,
+	     *     			b:2,
+	     *     			c:aa	
+	     * 			 }
+	     */
 		doAction: function(item, key, e) {
 			if (window.ANDROID_WODFAN_INSTANCE) {
 				e.preventDefault();
@@ -112,6 +108,31 @@ $(function() {
 				return o[k] === 'undefined' ? m : o[k];
 			}) : s;
 
+		},
+		/**
+		 * @method getparam   get params from url
+		 * @param name{string}
+		 * @param url{string} url not neaded the default is current url
+		 * @return {string} return the param's value what you need
+		 * @static
+		 */
+		getUrlParam: function (name, url) {
+			var search = url || document.location.search;
+			var pattern = new RegExp("[?&]" + name + "\=([^&]+)", "g");
+			var matcher = pattern.exec(search);
+			var items = null;
+			if (null != matcher) {
+				try {
+					items = decodeURIComponent(decodeURIComponent(matcher[1]));
+				} catch (e) {
+					try {
+						items = decodeURIComponent(matcher[1]);
+					} catch (e) {
+						items = matcher[1];
+					}
+				}
+			}
+			return items;
 		}
 	}
 

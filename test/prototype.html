@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	;(function(){
+		var Person=function(){}
+		Person.prototype={
+			name:'lee',
+			age:29,
+			sayName:function(){
+				this.name="yanan";
+			}
+		}
+		var person1=new Person();
+		person1.sayName();
+		console.log(person1.name);
+
+	})()
+</script>
+</body>
+</html>
