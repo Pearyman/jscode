@@ -1,4 +1,4 @@
-$(function() {
+define(function() {
 	var BASE = {
 		version: '1.0.0',
 		ui: {},
@@ -54,7 +54,7 @@ $(function() {
 
 	BASE.method = {
 		/*
-	     *@param 用于和安卓 IOS传递数据 
+	     *@param 用于和android IOS传递数据 
 	     *@param 数据利用item对象来进行传递
 	     *example:item={
 	     *     			a:1,
@@ -136,5 +136,5 @@ $(function() {
 		}
 	}
 
-	BASE.ui.init();
+	return BASE;
 })
