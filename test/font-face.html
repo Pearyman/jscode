@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>font-face</title>
+	<style type="text/css">
+	@font-face{
+		font-family: 'icon';
+		src:url('../font/icon.eot'),
+			url('../font/icon.ttf'),
+			url('../font/icon.woff'),
+			url('../font/icon.svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+	p{font-size: 50px; color: skyblue;}
+	p:before{
+		font-family: 'icon';
+		content:'\e001';
+
+	}
+
+	</style>
+</head>
+<body>
+	<p>商城</p>
+	<p>百货</p>
+</body>
+</html>
