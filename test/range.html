@@ -16,15 +16,13 @@
 			return this.form<=x && x<=this.to;
 		},
 		foreach:function(f){
-			for(var x=Math.ceil(this.form); x<=this.to; X++){
-				f(x);
-			}
+			for(var x=Math.ceil(this.form); x<=this.to; x++)f(x);	
 		},
 		toString:function(){
 			return "("+this.form+"..."+this.to+")";
 		}
 	}
-	var r=Range(1,3);
+	var r=new Range(1,3);
 	console.log(r.hasOwnProperty("includes"));
 	r.includes(2);
 	r.foreach(console.log);
