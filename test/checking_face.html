@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>checking</title>
+</head>
+<body>
+<script type="text/javascript" src="../moudle/zepto.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$.ajax({
+			url:'http://api.eyekey.com/face/Check/checking',
+			type:'post',
+			data:{
+				app_id:'b24ac94cf21b4264a35b2df25230461d',
+				app_key:'7b20d5c4ff04432dba1b1c2005abac7c',
+				url:'http://tp1.sinaimg.cn/1447414440/180/5696766016/1'
+			},
+			success:function(res){
+				console.log(res.face);
+			},
+			error:function(){
+
+			}
+		})
+	})
+</script>
+</body>
+</html>
