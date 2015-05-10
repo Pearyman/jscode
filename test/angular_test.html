@@ -3,10 +3,44 @@
 <head>
 	<meta charset="UTF-8">
 	<title>angular.js</title>
-<script type="text/javascript" src="../moudle/require_angular_zepto.js"></script>
+
+<!-- <script type="text/javascript" src="../moudle/require_zeptoconfig.js"></script> -->
 </head>
 <body ng-app ng-init="name='world'">
-	<h1>hello {{name}}!</h1>
+	<!-- <h1></h1> -->
+<script type="text/javascript" src="../moudle/require_angular_zepto.js"></script>
+<script src="https://leancloud.cn/scripts/lib/av-0.5.1.min.js"></script>
+<!-- <script src="https://leancloud.cn/scripts/lib/av-{{sdkversion.javascript}}.min.js"></script> -->
+<script type="text/javascript">
+ 	AV.initialize("a5zjlnxgv6vhjnstba351wh97s3tc40hsot0no9j2b9wa153", "qhod8u5iijtvgm16g07gw1dm8f4mgmtqnthsloc7rqkyoxgb");
+	// 初始化 param1：应用 id、param2：应用 key
+	// .initialize("{{appid}}", "{{appkey}}");
+	// post
+	// var TestObject = AV.Object.extend("TestObject");
+	// var testObject = new TestObject();
+	// testObject.save({foo: "好好好"}, {
+	//   success: function(object) {
+	//   alert("LeanCloud works!");
+	//   }
+	// });
+	// get
+	AV.Query.doCloudQuery('select * from TestObject', {
+	  success: function(result){
+	    //results 是查询返回的结果，AV.Object 列表
+	    var results = result.results;
+	    var list='';
+	    for(var i=0;i<results.length;i++){
+	    	list+='<h1>'+(i+1)+'&emsp;'+results[i].attributes.foo+'</h1>';	    	    
+	    }
+	    $("body").html(list);
+	    
+	  },
+	  error: function(error){
+	    //查询失败，查看 error
+	    console.dir(error);
+	  }
+	});
 	
+</script>	
 </body>
 </html>
