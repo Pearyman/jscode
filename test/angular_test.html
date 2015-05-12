@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>angular.js</title>
+
+<!-- <script type="text/javascript" src="../moudle/require_zeptoconfig.js"></script> -->
+<style type="text/css">
+	.msg{color: #000;}
+    .showmsg{margin-bottom:40px; width:100%; height: 44px; background: #d1d1d1; position: absolute; bottom: 0; }
+	textarea{width:90%; height: 40px; line-height: 40px; border:1px solid #ccc;}
+	a{display: inline-block; width: 100px; line-height: 40px; height:40px; color:#fff; background: #999; border-radius: 5px; text-align: center; text-decoration: none;}
+</style>
+</head>
+<body ng-app ng-init="name='world'">
+	<div class="msg"></div>
+	<div class="showmsg">
+		<textarea placeholder="输入你想吐槽的文字..."></textarea> 
+		<a href="javascript:;" class="submit">发布</a>
+	</div>
+<script type="text/javascript" src="../moudle/require_angular_zepto.js"></script>
+<script src="https://leancloud.cn/scripts/lib/av-0.5.1.min.js"></script>
+<script type="text/javascript">
+	//初始化 appid app_key
+ 	AV.initialize("a5zjlnxgv6vhjnstba351wh97s3tc40hsot0no9j2b9wa153", "qhod8u5iijtvgm16g07gw1dm8f4mgmtqnthsloc7rqkyoxgb");
+	// post
+	 $(".submit").on("click",function(){
+	 	var TestObject = AV.Object.extend("TestObject");
+		var testObject = new TestObject();
+		testObject.save({foo: $("textarea").val()}, {
+		  success: function(object) {
+		  	$(".msg").append('<h1>'+'*'+'&emsp;'+$("textarea").val()+'</h1>');
+		  	$("textarea").val('');
+		  	window.location.reload();
+		  }
+		});
+	 })
+	
+	// get
+	AV.Query.doCloudQuery('select * from TestObject', {
+	  success: function(result){
+	    //results 是查询返回的结果，AV.Object 列表
+	    var results = result.results;
+	    var list='';
+	    for(var i=0;i<results.length;i++){
+	    	list+='<h1>'+(i+1)+'&emsp;'+results[i].attributes.foo+'</h1>';
+	    	if(results[i].attributes.foo.substr(0,4)=="http"){
+	    		list+='<img src='+results[i].attributes.foo+'>';
+	    	}	    	    
+	    }
+	    $(".msg").html(list);
+	    
+	  },
+	  error: function(error){
+	    //查询失败，查看 error
+	    console.dir(error);
+	  }
+	});
+	
+</script>	
+</body>
+</html>
