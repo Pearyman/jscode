@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>angular</title>
+<script type="text/javascript" src="../moudle/angular.min.js"></script>
+<link rel="stylesheet" type="text/css" href="syntaxHighlighter/styles/syntaxHighlighter.css">
+<style type="text/css">
+	 *{margin:0; padding:0;}
+	 a{text-decoration: none;}
+	 img{display: block;}
+	 .section-left{float: left; width: 50%; background: #ccc; height: 800px;}
+	 .section-left p{margin:10px 0 0 10px; font-size: 14px;}
+	 .section-left p input{width: 80%; border:1px solid #999; height: 30px; line-height: 30px;}
+	 .add_btn{display:inline-block; width: 140px; height: 30px; line-height: 30px; background: yellow; text-align:center; border-radius: 7px;}
+	 .code_container{width: 86%; border:1px solid #999; border-radius: 7px; height: 60px; word-wrap: nowrap}
+	 .section-right{float: right; width: 50%; /*background: #000;*/ height: 800px;}
+	 .section-right textarea{width: 100%; height: 800px;}
+	 .section-left p input.sku_input{width:20%;}
+	 .j_add_pic{margin-left: 200px;}
+	 .j_add_sku{margin-left: 20px;}
+	 .j_add_lr_sku{margin-left: 20px;}
+
+</style>
+</head>
+<body>
+	<div class="section-left">
+		<p>标题:<input type="text" ng-model="title"/></p>
+		<p><a href="javascript:;" class="add_btn j_add_pic">上传图片</a></p>
+		<p>
+		单品id:<input type="text" class="sku_input sku_single_id" /><a href="javascript:;" class="add_btn j_add_sku">添加单品</a></p>
+		<p>左&emsp;id:<input type="text" class="sku_input sku_left_id"/>右id:<input type="text" class="sku_input sku_right_id"/><a href="javascript:;" class="add_btn j_add_lr_sku">添加左右结构单品</a></p>
+		<p><textarea class="code_container" ng-model="code_container"></textarea></p>
+		
+		
+	</div>
+	<div class="section-right">
+		<!-- <pre name="code" class="xml" > -->
+		<textarea>
+			<!DOCTYPE html>
+			<html>
+		    <head lang="en">
+		       <meta charset="UTF-8">
+		       <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		       <meta name="renderer" content="webkit" />
+		       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		       <meta name="keywords" content="明星时尚,穿衣服搭配,明星衣橱,换女性装,潮流行,杂志海报,欧美风,购物清单,逛淘宝,达人,模特,芭比莎,昕薇,瑞丽,米娜,红秀,小公主娃娃换装,美容护肤妆发型,tappi塌屁熊,耽甲"/>
+		       <meta name="description" content="搜罗齐世界所有明星达人最潮街拍图; 打开所有明星、街拍达人的衣橱一探究竟; 不花钱，就得到明星造型顾问的穿衣指导; 最便捷地找到与她们穿的一模一样的宝店; 打开明星衣橱，学明星穿、跟明星买！ 这里有全世界最全最IN的时尚潮流明星街拍, 图片, 各路欧美、日韩、港台、内地明星、时尚达人将. 最新一季T台潮流穿在身上，她们与你分享经造型指导、精心搭配后的时尚穿衣经、搭配秘笈。我们为你搜罗她潮流衣饰、物件的最佳好店，你提供几千万件衣物最佳的搭配法则，让你也可以像明星穿在潮流尖端。"/>
+		       <title>{{title}}</title>
+		       <link href="http://fed.dev.pimg.cn/css/app/wap/act/yunifang_official.css" rel="stylesheet" type="text/css"/>
+		    </head> 
+		    <body>
+		        <div class="main">
+					<!-- 此处放置你生成的代码 -->
+					{{code_container}}
+		        </div>
+			<script src="http://fed.pimg.cn/js/gallery/require-zepto.js"></script>
+			<script src="http://fed.pimg.cn/js/gallery/require-zeptoconfig.js"></script>
+			<script src="http://fed.dev.pimg.cn/js/app/wap/act/yunifang_official.js"></script>
+		    </body>
+		    </html>
+		</textarea>
+			
+		<!-- </pre> -->
+	</div>
+<!-- <script src="syntaxHighlighter/scripts/shCore.js"></script> -->
+<!-- <script src="syntaxHighlighter/scripts/shBrushXml.js"></script> -->
+<!-- <script src="syntaxHighlighter/scripts/shBrushCss.js"></script> -->
+<!--<script>dp.SyntaxHighlighter.HighlightAll('code');</script>-->
+<script src="http://fed.pimg.cn/js/gallery/require-jquery.js"></script>
+<script src="http://fed.pimg.cn/js/gallery/require-config.js"></script>
+<script type="text/javascript">
+	require(['upload'], function (UP) {
+    var DEMO = {
+        init: function () {
+           var self=this;
+           self.upload();
+           self.bindEvent();
+           // self.showData();
+        },
+        upload:function(){
+        	 UP({
+                selectNode: $('.j_add_pic'),
+                action:'http://admin.hichao.com/wodfan/file/upload',
+                complete: function (data) {
+                    if(data.success){
+                    	$(".code_container").val("<img src="+data.message.data.url+" width='100%'/>");              
+                     }
+                }
+            })
+        	 UP({
+                selectNode: $('.j_add_sku'),
+                action:'http://admin.hichao.com/wodfan/file/upload',
+                complete: function (data) {
+                    if(data.success){
+                    	$(".code_container").append('<a class="j_action" href="javascript:;" data-id="'+$(".sku_single_id").val()+'" data-type="sku"><img src="'+data.message.data.url+'" width="100%"/></a>');               
+                     }
+                }
+            })
+        	  UP({
+                selectNode: $('.j_add_lr_sku'),
+                action:'http://admin.hichao.com/wodfan/file/upload',
+                complete: function (data) {
+                    if(data.success){
+                    	$(".code_container").val('<div class="left_right_sku"><img src="'+data.message.data.url+'" width="100%"/><a class="j_action meigui_left" href="javascript:;" data-id="'+$(".sku_left_id").val()+'" data-type="sku"></a><a class="j_action lvdou_right" href="javascript:;" data-id="'+$(".sku_right_id").val()+'" data-type="sku"></a></div>');               
+                     }
+                }
+            })
+        },
+        bindEvent:function(){
+        	$(".j_create_html").on("click",function(){
+        		
+        	})
+        }
+    };
+    DEMO.init();
+})
+</script>
+</body>
+</html>
