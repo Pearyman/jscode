@@ -1,0 +1,8 @@
+html{font-size:100px;font-size:calc(1000vw/32);background:#E1E1E1;}
+@media all and (max-width:320px){
+  html{font-size:100px;}
+}
+@media all and (min-width:640px){
+  html{font-size:200px;}
+}
+body{min-width:320px;max-width:640px;margin:0 auto;color:#333;padding:0;font:normal .12em/1.6 "Microsoft YaHei",Verdana,Tahoma;background:#FFF;}

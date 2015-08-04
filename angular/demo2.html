@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="dataText" class="ng-app" id="ng-app">
+<head>
+	<meta charset="UTF-8">
+	<title>angular</title>
+<style type="text/css">
+	.common_btn{padding:10px; background: skyblue; color: #fff; text-decoration: none;}
+</style>
+</head>
+<body ng-controller="dataList">
+	hello {{'world'}}
+   <input type="checkbox" />打&emsp;&emsp;折:<input type="text" ng-model="discount" />
+   <input type="checkbox" />统一降价:<input type="text" ng-model="reduce_price" />
+   <p ng-repeat="price in prices"><input type="checkbox" ng-model="chk" ng-click="check(chk)"/>{{price.name}}商品价格:{{discount/10*price.num}}</p>
+   <p>已选择了<span class="check_num">30</span> 款商品</p>
+   <a href="javascript:;" class="common_btn j_btn" ng-click="showMsg()">hello</a>
+<script type="text/javascript" src="../moudle/angular.min.js"></script>
+<script src="http://fed.pimg.cn/js/gallery/require-jquery.js"></script>
+<script src="http://fed.pimg.cn/js/gallery/require-config.js"></script>
+<script type="text/javascript">
+	var dataText=angular.module('dataText',[]);
+	dataText.controller('dataList',function($scope){
+		$scope.prices=[
+			{
+				'num':'33',
+				'name':'bike'
+			},
+			{
+				'num':'233',
+				'name':'iphone'
+			},
+			{
+				'num':'133',
+				'name':'telphone'
+			},
+			{
+				'num':'533',
+				'name':'cake'
+			},
+			{
+				'num':'1433',
+				'name':'cake'
+			},
+			{
+				'num':'93',
+				'name':'cake'
+			},
+			{
+				'num':'63',
+				'name':'cake'
+			},
+			{
+				'num':'23',
+				'name':'cake'
+			},
+			{
+				'num':'13',
+				'name':'cake'
+			},
+			{
+				'num':'113',
+				'name':'cake'
+			}
+
+		];
+		$scope.chk=false;
+		$scope.check = function(val){
+			var check_num=parseInt($(".check_num").text());
+			val ? $(".check_num").text(check_num+1) : $(".check_num").text(check_num-1);
+		}
+		$scope.showMsg=function(){
+			alert("hello world");
+		}
+	})
+	
+</script>	
+</body>
+</html>
