@@ -22,7 +22,7 @@ define(function () {
             self.configs = {
                 container : configs.container || '',  //父节点   object
                 target: configs.target || "",         //要绑定事件的目标   ',class,a,input,button' 支持多个
-	              eventType : configs.eventType || 'click',    //事件类型
+	            eventType : configs.eventType || 'click',    //事件类型
                 eventHandle: configs.eventHandle || null,    //事件
                 disabledClass: configs.disabledClass ? configs.disabledClass : 'hc-ui-btn-disable' //禁止点击样式
             }
