@@ -6,7 +6,7 @@
  email:liyananhappy@sina.cn
  date:2015-8-18
 */
-;(function(){
+define(function(){
 	var LTZ={version: '1.0.0', methods :{} };
 	/*
 	 * manage zindex attribute automatically
@@ -27,10 +27,10 @@
 
 	}
 
-	var a=45.6;
-	var b=13;
-	var c=a*b;
-	console.log(c)
-	console.log(LTZ.methods.transToFloat(c,1));
+	// var a=45.6;
+	// var b=13;
+	// var c=a*b;
+	// console.log(c)
+	// console.log(LTZ.methods.transToFloat(c,1));
 	return LTZ;
 })();
