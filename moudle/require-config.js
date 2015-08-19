@@ -8,9 +8,11 @@
 // }
 
 require.config({
-    baseUrl: __baseUrl,
+    // baseUrl: __baseUrl,
     paths: {
         base: '../base/ltz_base',
+        slideShow:'../sliderShow/slideshow',
+        animlogic:'../sliderShow/animlogic'
     },
     shim: {
         highcharts: {

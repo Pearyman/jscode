@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- author: nan -->
+<!-- method: used in ltz public ui module -->
+<!-- time:   2015-8-20 -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>sliderShow demo</title>
+    <link rel="stylesheet" type="text/css" href="base/base.css">
+</head>
+<body>
+<style type="text/css">
+    #test{position: relative; margin: 0 auto; width: 900px;}
+    #box{width: 900px; height: 380px; font-size: 12px; position: relative;overflow: hidden;}
+    .content{width: 260px; height: 60px; position: absolute; right: 20px; top: 70px; z-index: 21; color: #fff;}
+    .cover{position: absolute; width: 300px; height: 100px; right: 0; top: 50px; z-index: 20; background: black; opacity: .6;}
+    .box{display: inline-block;}
+    #tag{position: absolute; right: 10px; bottom: 10px; z-index: 20;}
+    #tag .tag{width: 20px; height: 20px; margin: 10px; float: left; border-radius: 10px; overflow: hidden; line-height: 100px; border: solid 1px #fff;}
+    #tag .ymui_ss_tag_on{background: #fff;}
+    #preview{width: 80px; height: 40px; text-align: center; line-height: 40px;background: #ddd; position: absolute; left: -80px; top: 200px;}
+    #next{width: 80px; height: 40px; text-align: center; line-height: 40px;background: #ddd; position: absolute; right: -80px; top: 200px;}
+</style>
+<div id="test">
+    <div class="content"></div>
+    <div class="cover"></div>
+    <!-- <div id="preview">preview</div> -->
+    <!-- <div id="next">next</div> -->
+    <div id="box">
+        <a class="box" href="1"><img src="images/m_1382511696975.jpg" alt=""/></a>
+        <a class="box" href="2"><img src="images/m_1382511075586.jpg" alt=""/></a>
+        <a class="box" href="3"><img src="images/m_1382511079695.jpg" alt=""/></a>
+        <a class="box" href="4"><img src="images/m_1382511034689.jpg" alt=""/></a>
+        <a class="box" href="5"><img src="images/m_1382511056164.jpg" alt=""/></a>
+        <a class="box" href="6"><img src="images/m_1382511060224.jpg" alt=""/></a>
+    </div>
+    <div id="tag">
+        <div class="tag">2</div>
+        <div class="tag">3</div>
+        <div class="tag">4</div>
+        <div class="tag"></div>
+        <div class="tag"></div>
+        <div class="tag"></div>
+    </div>
+</div>
+<script src="../moudle/require-jquery.js"></script>
+<script src="../moudle/require-config.js"></script>
+<script type="text/javascript">
+
+    require(['slideShow'], function (slideshow) {
+        var data = [
+                '有序列表，与“insertunorderedlist”命令互斥',
+                '该方法的第一个参数是需要执行的命令,剩下的可选的参数根据每个命令的不同而有一些差异,具体请参照相应的命令详情',
+                '查询给定命令在当前选区内的状态,通用的返回状态有',
+                '以上列表中的方法对于每一个命令都是适用的。区别在于，对于不同的命令',
+                '对当前编辑器的内容执行自动排版， 排版的行为根据config配置文件里的',
+                '根据config配置文件里“customstyle”选项的值对匹配的标签执行样式替换'
+        ];
+
+        var slideshow = slideshow({
+            tagWrapper : '#tag',
+            tagSign : '.tag',
+            boxWrapper : '#box',
+            boxSign : '.box',
+            animate : 3,
+            autoPlay:3,
+            event : 'click',
+            fnSelect : function (index) {
+                $('.content').html(data[index]);
+            }
+        });
+        $('#preview').click(function () {
+            slideshow.preview({
+                animate : 1
+            });
+        });
+        $('#next').click(function () {
+            slideshow.next({
+                animate : 9
+            });
+        })
+    });
+</script>
+</body>
+</html>
