@@ -1,4 +1,21 @@
-
+/**
+ * method: used in ltz public ui module. mainly used in sliderShow in web
+ * @param {tagWrapper}{string} define outer tag dom
+ * @param {tagSign}{string} define inner tag dom
+ * @param {boxWrapper}{string} define store slider images top-level dom
+ * @param {boxSign}{string} wapper img dom
+ * @param {tagSelected}{string} active tag
+ * @param {play}{number} default 0 autoPlay 
+ * @param {animate}{number 1~9} based on animlogic. there are 9 effects totally
+ * @param {autoPlay}{number} play time distance
+ * @param {event}{string} mouseover || click on tagSign
+ * @param {lazyLoad}{string} default 'img'. improve the web performance
+ * @param {fnSelect}{function} default ,img in sliding callback function
+ * @param {fnPlay}{function} default null,img after slide callback function
+ *----------------------------------
+ * author:nan
+ * time:2015-8-20
+ **/
 define(['animlogic'],function (animlogic) {
 
     var animLogic = animlogic;
@@ -60,29 +77,19 @@ define(['animlogic'],function (animlogic) {
             $(this).attr('data-ss-num', index);
         });
 
-        function autoPlay(){
-            if(!config.autoPlay){
-                return;
-            }
-            clearTimeout(autoPlayDelay);
-            // config.boxWrapper.hover(
 
-            // function(){
+        $(config.boxWrapper).hover(
+            function(){
+               clearInterval(autoPlayDelay);
+       
+            },function(){
+                autoPlayDelay = setInterval(function () {
+                    playNext();
+                    // autoPlay();
+                }, config.autoPlay*1000);
+       
+        }).trigger('mouseleave')
 
-            //    alert("i am in");
-
-            // },
-
-            // function(){
-
-            //    alert("leave out");
-
-            // });
-            autoPlayDelay = setTimeout(function () {
-                playNext();
-                autoPlay();
-            }, config.autoPlay*1000);
-        }
 
         function playNext (config) {
             config = $.extend({
@@ -130,7 +137,7 @@ define(['animlogic'],function (animlogic) {
             curSeletedNum = curIndex;
             showBox(curIndex);
             selectTag(curIndex);
-            autoPlay();
+            // autoPlay();
             config.fnPlay && config.fnPlay(curIndex, len, tags, boxes);
         }
 
@@ -165,7 +172,7 @@ define(['animlogic'],function (animlogic) {
         }
 
         playGo(config.play);
-        autoPlay();
+        // autoPlay();
 
         $(config.tagWrapper).on(config.event, config.tagSign, function (e) {
             e.preventDefault();
