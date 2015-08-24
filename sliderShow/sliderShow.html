@@ -16,7 +16,7 @@
     .cover{position: absolute; width: 300px; height: 100px; right: 0; top: 50px; z-index: 20; background: black; opacity: .6;}
     .box{display: inline-block;}
     #tag{position: absolute; bottom: 0; z-index: 20;}
-    #tag .tag{padding-left:15px; width: 180.2px; height: 32px; float: left; overflow: hidden; border: solid 1px #fff; border-left: none; opacity: .3; line-height: 32px; background: #000; color: #999;}
+    #tag .tag{padding-left:15px; width: 180.2px; height: 32px; float: left; overflow: hidden; border: solid 1px #fff; border-left: none; opacity: .4; line-height: 32px; background: #000; color: #999;}
     #tag .ymui_ss_tag_on{margin:-8px 0 0 -1px; height: 40px; line-height: 40px; /*background: #fff;*/ width: 179px; border:1px solid #fff; color: #fff; /*opacity: 0.8;*/}
     #preview{width: 80px; height: 40px; text-align: center; line-height: 40px;background: #ddd; position: absolute; left: -80px; top: 200px;}
     #next{width: 80px; height: 40px; text-align: center; line-height: 40px;background: #ddd; position: absolute; right: -80px; top: 200px;}
@@ -61,10 +61,10 @@
         var slideshow = slideshow({
             tagWrapper : '#tag',
             tagSign : '.tag',
-            boxWrapper : '#box',
+            boxWrapper : '#test',
             boxSign : '.box',
             animate : 4,
-            autoPlay: 3,
+            autoPlay: 4,
             lazyLoad: 'img',
             event : 'click',
             fnSelect : function (index) {

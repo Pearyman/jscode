@@ -5,7 +5,7 @@
  * @param {boxWrapper}{string} define store slider images top-level dom
  * @param {boxSign}{string} wapper img dom
  * @param {tagSelected}{string} active tag
- * @param {play}{number} default 0 autoPlay 
+ * @param {play}{number} (default) 0 autoPlay 
  * @param {animate}{number 1~9} based on animlogic. there are 9 effects totally
  * @param {autoPlay}{number} play time distance
  * @param {event}{string} mouseover || click on tagSign
@@ -14,6 +14,7 @@
  * @param {fnPlay}{function} default null,img after slide callback function
  *----------------------------------
  * author:nan
+ * email: liyananhappy@hotmail.com
  * time:2015-8-20
  **/
 define(['animlogic'],function (animlogic) {
@@ -50,7 +51,7 @@ define(['animlogic'],function (animlogic) {
             boxWrapper : '',
             boxSign : '',
             tagSelected : '',
-            play : 0,/*default show*/
+            play : 0,/*autoplay*/
             animate : 0,
             autoPlay : 0,/*seconds*/
             event : 'click',
@@ -176,7 +177,7 @@ define(['animlogic'],function (animlogic) {
 
         $(config.tagWrapper).on(config.event, config.tagSign, function (e) {
             e.preventDefault();
-            playGo( parseInt($(this).attr('data-ss-num')) );
+            playGo(parseInt($(this).attr('data-ss-num')));
         });
         if(config.event == 'mouseover'){
             $(config.tagWrapper).on('click', config.tagSign, function (e) {
