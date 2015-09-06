@@ -10,14 +10,15 @@
 </head>
 <body>
 <style type="text/css">
-    #test{position: relative; margin: 0 auto; width: 980px;}
-    #box{width: 980px; height: 355px; font-size: 12px; position: relative;overflow: hidden;}
-    .content{width: 260px; height: 60px; position: absolute; right: 20px; top: 70px; z-index: 21; color: #fff;}
-    .cover{position: absolute; width: 300px; height: 100px; right: 0; top: 50px; z-index: 20; background: black; opacity: .6;}
+    #test{position: relative; margin: 0 auto; width:100%;}
+    #box{width: 1920px; height: 355px; font-size: 12px; position: relative;overflow: hidden;}
     .box{display: inline-block;}
-    #tag{position: absolute; bottom: 0; z-index: 20;}
+    .box img{position:absolute; left: 50%; margin-left: -960px;}
+    #tag{position: absolute; bottom: 0; left:15%; z-index: 20;}
     #tag .tag{padding-left:15px; width: 180.2px; height: 32px; float: left; overflow: hidden; border: solid 1px #fff; border-left: none; opacity: .4; line-height: 32px; background: #000; color: #999;}
-    #tag .ymui_ss_tag_on{margin:-8px 0 0 -1px; height: 40px; line-height: 40px; /*background: #fff;*/ width: 179px; border:1px solid #fff; color: #fff; /*opacity: 0.8;*/}
+    #tag .ymui_ss_tag_on{margin:-8px 0 0 -1px; height: 40px; line-height: 40px;  width: 179px; border:1px solid #fff; color: #fff; }
+    .inner-tag{border-left: none;}
+    #tag .tag.outer-tag{border-left: 1px solid #fff; opacity: .4;}
     #preview{width: 80px; height: 40px; text-align: center; line-height: 40px;background: #ddd; position: absolute; left: -80px; top: 200px;}
     #next{width: 80px; height: 40px; text-align: center; line-height: 40px;background: #ddd; position: absolute; right: -80px; top: 200px;}
 </style>
@@ -27,21 +28,28 @@
     <!-- <div id="preview">preview</div> -->
     <!-- <div id="next">next</div> -->
     <div id="box">
-        <a class="box" href="javascript:;"><img _src="https://s1.lantouzi.com/img/201505/alun_new/alun_banner_new.jpg" alt=""/></a>
-        <a class="box" href="javascript:;"><img _src="https://s1.lantouzi.com/img/201508/xiangle_xbox.jpg" alt=""/></a>
-        <a class="box" href="javascript:;"><img _src="https://s1.lantouzi.com/img/201506/qiyelicai_pc_new3.png" alt=""/></a>
-        <a class="box" href="javascript:;"><img _src="https://s1.lantouzi.com/img/201508/3.0_banner_4.jpg" alt=""/></a>
-        <a class="box" href="javascript:;"><img _src="https://s1.lantouzi.com/img/201508/qunxing/banner_new_3.jpg" alt=""/></a>
-     
-       
+        <a class="box" href="javascript:;">
+            <img _src="https://s1.lantouzi.com/img/201508/1920-1.jpg" alt=""/>
+        </a>
+        <a class="box" href="javascript:;">
+            <img _src="https://s1.lantouzi.com/img/201508/1920-2.jpg" alt=""/>
+        </a>
+        <a class="box" href="javascript:;">
+            <img _src="https://s1.lantouzi.com/img/201506/qiyelicai_pc_new3.png" alt=""/>                   
+        </a>
+        <a class="box" href="javascript:;">
+            <img _src="https://s1.lantouzi.com/img/201508/3.0_banner_4.jpg" alt=""/>
+        </a>
+        <a class="box" href="javascript:;">
+            <img _src="https://s1.lantouzi.com/img/201508/qunxing/banner_new_3.jpg" alt=""/>
+        </a>     
     </div>
-    <div id="tag">
-        <div class="tag">斗牛行动带你玩</div>
-        <div class="tag">斗牛行动带你玩</div>
-        <div class="tag">斗牛行动带你玩</div>
-        <div class="tag">斗牛行动带你玩</div>
-        <div class="tag">斗牛行动带你玩</div>
-
+    <div id="tag" class="clearfix">
+        <div class="tag outer-tag">斗牛行动带你玩</div>
+        <div class="tag inner-tag">斗牛行动带你玩</div>
+        <div class="tag inner-tag">斗牛行动带你玩</div>
+        <div class="tag inner-tag">斗牛行动带你玩</div>
+        <div class="tag inner-tag">斗牛行动带你玩</div>
     </div>
 </div>
 <script src="../moudle/require-jquery.js"></script>
@@ -64,12 +72,12 @@
             boxWrapper : '#test',
             boxSign : '.box',
             animate : 4,
-            autoPlay: 4,
+            autoPlay: 40000,
             lazyLoad: 'img',
             event : 'click',
-            fnSelect : function (index) {
-                // $('.content').html(data[index]);
-            }
+            // fnSelect : function (index) {
+            //     // $('.content').html(data[index]);
+            // }
         });
         // $('#preview').click(function () {
         //     slideshow.preview({
